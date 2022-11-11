@@ -1,0 +1,11 @@
+- host: localhost
+  connection: localhost
+  become: true
+
+  tasks:
+  - name : Install sudo
+    pacman : sudo
+  - name: Install htop
+    pacman: htop
+
+
