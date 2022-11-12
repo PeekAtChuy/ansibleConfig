@@ -3,11 +3,11 @@
   connection: local
   become: true
 
-  pre_task:
-    - name: update repositories
-      pacman:
-        update_cache: yes
-      changed_when: yes
+  pre_tasks:
+    - name: update repositories 
+      tags: always
+      pacman: update_cache= yes
+      changed_when: False
 
   tasks:
     - include: tasks/user.yml
