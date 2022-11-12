@@ -1,6 +1,7 @@
--hosts: localhost
- connection: local
- become: true
+---
+- hosts: localhost
+  connection: local
+  become: true
 
   pre_task:
     - name: update repositories
