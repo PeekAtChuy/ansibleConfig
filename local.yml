@@ -1,11 +1,13 @@
-- host: localhost
+-host: localhost
   connection: localhost
   become: true
 
+  pre_task:
+    - name: update repositories
+      pacman:
+        update_cache: yes
+      changed_when: yes
+
   tasks:
-  - name : Install sudo
-    pacman : sudo
-  - name: Install htop
-    pacman: htop
-
-
+    - include: tasks/user.yml
+    - include: tasks/packages.yml

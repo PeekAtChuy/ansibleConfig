@@ -1,0 +1,10 @@
+
+tasks:
+- name : Install base
+  pacman : 
+    name:
+      - sudo
+      - htop
+        
+
+
