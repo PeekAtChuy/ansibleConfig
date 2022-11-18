@@ -7,7 +7,29 @@
       tags: always
       pacman: update_cache=yes
       changed_when: False
-
   tasks:
-    - include: tasks/user.yml
-    - include: tasks/packages.yml
+    - name: install dependencies 
+      pacman: 
+        name: Basic Pacmanstuff
+          - networkmanager
+          - network-manager-applet
+          - sudo
+          - doas
+          - htop
+          - xorg-server
+          - xorg-xinit
+          - xterm
+          - awesome
+          - lightdm
+          - lightdm-gtk-greeter
+          - lightdm-gtk-greeter-settings
+          - vim
+          - npm
+          - python3
+          - pyright
+          - neovim
+          - git
+          - zip
+          - slock
+          - rofi
+
